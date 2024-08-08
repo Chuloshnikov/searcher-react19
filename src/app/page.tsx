@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import Tasks from "@/components/todovex/tasks";
 
 export default function Home() {
+
+
   return (
     <main className="flex min-h-screen flex-col items-center p-24">
       <h1>Todovex</h1>
       <Button variant={"outline"}>Hi</Button>
+      <Tasks/>
     </main>
   );
 }
