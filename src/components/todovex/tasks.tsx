@@ -9,7 +9,7 @@ export default function Tasks() {
   return (
     <div>
      <p>Tasks</p>
-      {tasks?.map((task, index) => <p key={index}>{JSON.stringify(task)}</p>)}
+      {tasks?.map((task:any, index) => <p key={index}>{JSON.stringify(task)}</p>)}
     </div>
   );
 }
