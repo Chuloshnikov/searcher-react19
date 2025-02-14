@@ -4,13 +4,12 @@ import Search from "./components/Search";
 
 
 const App = () => {
-  const [searchTerm, setSearchTerm] = useState();
+  const [search, setSearch] = useState();
   return ( 
       <div className='pattern'>
           <div className="wrapper">
             <Header/>
-            <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-            
+            <Search search={search} setSearch={setSearch}/>
           </div>
       </div>
   )
