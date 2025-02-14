@@ -1,31 +1,17 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import Header from "./components/Header";
+import Search from "./components/Search";
 
-const Card = ({ title }) => {
-  const [hasLiked, setHasLiked] = useState(false);
-
-  useEffect(() => {
-    console.log(`${title} has been liked ${hasLiked}`);
-}, []);
-
-  return (
-    <div className='card'>
-      <h2>{title}</h2>
-      <button onClick={() => setHasLiked(!hasLiked)}>
-          {hasLiked ? 'Liked' : 'Like'}
-      </button>
-    </div>
-  )
-};
 
 const App = () => {
-  
-
+  const [searchTerm, setSearchTerm] = useState();
   return ( 
-      <div className='card-container'>
-        <Card title="Star Wars" rating={5} isCool={true}/>
-        <Card title="Batman" rating={5} isCool={true}/>
-        <Card title="Jasy James" rating={5} isCool={true}/>
+      <div className='pattern'>
+          <div className="wrapper">
+            <Header/>
+            <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+            
+          </div>
       </div>
   )
 };
