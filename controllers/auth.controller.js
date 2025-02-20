@@ -25,6 +25,7 @@ export const signUp = async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const newUsers = await User.create([{ name, email, password: hashedPassword }], { session });
+    console.log("JWT_EXPIRES_IN:", JWT_EXPIRES_IN);
 
     const token = jwt.sign({ userId: newUsers[0]._id }, JWT_SECRET, { expiresIn: JWT_EXPIRES_IN });
 
